@@ -1,0 +1,56 @@
+/* COLORS: 0a0908 22333b eae0d5 CFBCA5 D0BC90 5e503f */
+* {
+    box-sizing: border-box; 
+}
+body{
+    background-color:#22333b;
+    font-size: 1rem;
+    background-image: url(./assets/gplay.png);
+    font-family: "Space Grotesk", sans-serif;
+}
+.no-scroll {
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.section__title{
+    margin: 1rem;
+}
+h1{
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-size: 2rem;
+    color: #e1c483;
+    margin: 0;
+    padding: 0;
+}
+h3{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-weight: 400;
+    color: #fff2e5;
+    text-wrap: pretty;
+}
+input,textarea, button, ul, ol, body{
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;   
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    max-width: 700px;
+}
