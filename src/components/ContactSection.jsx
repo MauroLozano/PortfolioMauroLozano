@@ -15,13 +15,7 @@
             subject: '',
             message: ''
         })
-        const [errors, setErrors] = useState({
-            name: '',
-            lastname: '',
-            email: '',
-            subject: '',
-            message: ''
-        })
+        const [errors, setErrors] = useState({})
         const handleChange = (e)=>{
             setFormData({
                 ...formData,
@@ -37,16 +31,18 @@
                     return newErrors
                 })
             }else{
-                setErrors(prevErrors=>{
-                    const newErrors = {
-                        ...prevErrors,
-                        [e.target.name]: ''
-                    }
-                    return newErrors
+                setErrors(prevErrors =>{
+                    // **Técnica de Eliminación Inmutable de Propiedades (Desestructuración con Rest)**
+                    // 1. [e.target.name]: deletedError: Extrae y asigna el valor del error a eliminar
+                    //    (ej. 'email') a la variable temporal 'deletedError', marcándolo como 'procesado'.
+                    // 2. ...restOfErrors: El operador Rest recoge TODAS las demás propiedades
+                    //    que no fueron explícitamente asignadas (las no 'procesadas').
+                    //    Esto crea un NUEVO objeto SÓLO con los errores restantes.
+                    const {[e.target.name]: deletedError, ...restOfErrors} = prevErrors
+                    return restOfErrors
                 })
             }
         }
-
         const validateData = (name, value)=>{
             if(name == 'name'){
                 if(!nameRegex.test(value) || value == '') return 'El nombre no puede poseer numeros y debe ser de minimo 3 caracteres.'
@@ -65,9 +61,36 @@
             }
             return ''
         }
+        const validateAllData = (formData) =>{
+            let noErrors = true
+            for(let dataName in formData){
+                if(validateData(dataName, formData[dataName]) != ''){
+                    noErrors = false
+                }
+            }
+            return noErrors
+        }
         const handleSubmit = (e)=>{
             e.preventDefault()
-            console.log(errors)
+            if(validateAllData(formData)){
+                sendEmail(formData)
+            }
+        }
+        async function sendEmail(formData) {
+            const response = await fetch('/.netlify/functions/sendEmail/sendEmail.mjs',{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            const responseData = await response.json()
+            if(!response.ok) {
+                console.log('Ah ocurrido un error en el servidor: ' + responseData.message)
+                alert('Ah ocurrido un error en el servidor')
+                return
+            }
+            console.log(responseData.message)
         }
         //Logic to copy the email
         const [isCopied, setIsCopied] = useState(false)
