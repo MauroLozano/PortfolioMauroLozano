@@ -65,8 +65,16 @@
         const validateAllData = (formData) =>{
             let noErrors = true
             for(let dataName in formData){
-                if(validateData(dataName, formData[dataName]) != ''){
+                let errorMessage = validateData(dataName, formData[dataName])
+                if(errorMessage != ''){
                     noErrors = false
+                    setErrors(prevErrors => {
+                        const newErrors ={
+                            ...prevErrors,
+                            [dataName]: errorMessage
+                        }
+                        return newErrors
+                    })
                 }
             }
             return noErrors
@@ -94,9 +102,7 @@
                 return
             }
             setSubmitStatus({status: 'success', message: '¡Enviado!'})
-            console.log(responseData.message)
         }
-        
         //Logic to copy the email
         const [isCopied, setIsCopied] = useState(false)
         let copiedText = 'Copiar'

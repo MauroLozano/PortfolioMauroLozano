@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "nodemailer": "^7.0.11",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "yarn": "^1.22.22"
