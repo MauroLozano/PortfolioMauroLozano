@@ -27,6 +27,8 @@
     border-radius: 3px;
     padding: 0.5rem 5px;
     transition: background-color 0.3s ease-in-out;
+    color:#000;
+    font-weight: 500;
 }
 .contact__input--error{
     background-color: rgb(255, 201, 201);
@@ -39,6 +41,8 @@
     height: auto;
     resize: none;
     transition: background-color 0.3s ease-in-out;
+    font-weight: 500;
+    color: #000;
 }
 .contact__fieldset{
     display: flex;
@@ -55,8 +59,9 @@
     padding: 0 5px;
 }
 .form__submit{
-    background-color: #CFBCA5;
-    transition:all 0.1s ease-in;
+    width: 150px;
+    background-color: #e1c483;
+    transition: all 0.2s ease-in;
     transform: scale(1);
     box-shadow:  0 0 10px 1px #000;
     font-size: 1rem;
@@ -66,10 +71,23 @@
     margin-top: 20px;
 }
 .form__submit:hover{
-    background-color: #e1c483;
-    transition:all 0.05s ease-in-out;
-    transform: scale(1.05);
+    background-color: #ffebc0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.04);
     box-shadow: 0 0 5px 1px #000;
+}
+.from__submit--submitted{
+    width: 150px;
+    background-color: #CFBCA5;
+    transition: all 0.2s ease-in;
+    transform: scale(1);
+    box-shadow:  0 0 10px 1px #000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: #000;
 }
 .p__copy--mail{
     cursor: pointer;
@@ -84,6 +102,9 @@
 .p__copy--mail:active{
     transform: scale(0.98);
     transition: all 0.1s ease-in-out;
+}
+.input__submitted{
+    background-color: #cacaca;
 }
 /* Responsive */
 @media (max-width: 640px){

@@ -1,12 +1,13 @@
     import React, { forwardRef , useState , useRef } from "react";
     import styles from '../css/ContactSection.module.css'
     import Tooltip from "./Tooltips";
-    function copyMail(){
-        navigator.clipboard.writeText('mauroloz2006@gmail.com')
-    }
+    function copyMail(){navigator.clipboard.writeText('mauroloz2006@gmail.com')}
     const emailRegex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/m;
     const nameRegex = /^[a-zA-Z]{3,}$/;
     const ContactSection = forwardRef((props, ref)=>{
+        //Logic to change the styles when the from is submitted
+        const [submitStatus, setSubmitStatus] = useState({status: 'idle', message: 'Enviar'})
+        let submitBtnText = submitStatus.message
         //Logic to handle the form data
         const [formData, setFormData] = useState({
             name: '',
@@ -73,9 +74,11 @@
         const handleSubmit = (e)=>{
             e.preventDefault()
             if(validateAllData(formData)){
+                setSubmitStatus({status: 'submitting', message: 'Enviando...'})
                 sendEmail(formData)
             }
         }
+        //Logic to send the from data to Netlify function
         async function sendEmail(formData) {
             const response = await fetch('/.netlify/functions/sendEmail/sendEmail.mjs',{
                 method: 'POST',
@@ -90,8 +93,10 @@
                 alert('Ah ocurrido un error en el servidor')
                 return
             }
+            setSubmitStatus({status: 'success', message: '¡Enviado!'})
             console.log(responseData.message)
         }
+        
         //Logic to copy the email
         const [isCopied, setIsCopied] = useState(false)
         let copiedText = 'Copiar'
@@ -118,7 +123,6 @@
                 timerRef.current = timer
             }
         }
-
         return(
             <section className={styles['contact']} ref={ref}>
                 <h2>CONTACTO</h2>
@@ -129,20 +133,20 @@
                     <fieldset className={styles['contact__fieldset']}>
                         <legend className={styles['contact__legend']}>Infromacion Personal</legend>
                         <label className={styles.contact__label} htmlFor="name__input">Ingrese su nombre.</label>
-                        <input type="text" name="name" className={`${styles["contact__input"]} ${errors.name ? styles['contact__input--error']: ""}`} placeholder="Nombre" id="name__input" autoComplete="on" onChange={handleChange}/>
+                        <input type="text" name="name" className={`${styles["contact__input"]} ${errors.name ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Nombre" id="name__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
                         <label className={styles.contact__label} htmlFor="lastname__input">Ingrese su apellido.</label>
-                        <input type="text" name="lastname" className={`${styles["contact__input"]} ${errors.lastname ? styles['contact__input--error']: ""}`} placeholder="Apellido" id="lastname__input" autoComplete="on" onChange={handleChange}/>
+                        <input type="text" name="lastname" className={`${styles["contact__input"]} ${errors.lastname ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Apellido" id="lastname__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
                         <label className={styles.contact__label} htmlFor="email__input">Ingrese su Email.</label>
-                        <input type="email" name="email" className={`${styles["contact__input"]} ${errors.email ? styles['contact__input--error']: ""}`} placeholder="Email" id="email__input" autoComplete="on" onChange={handleChange}/>
+                        <input type="email" name="email" className={`${styles["contact__input"]} ${errors.email ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Email" id="email__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
                     </fieldset>
                     <fieldset className={styles['contact__fieldset']}>
                         <legend className={styles['contact__legend']}>Consulta</legend>
                         <label className={styles.contact__label} htmlFor="subject__input">Asunto.</label>
-                        <input type="text" name="subject" className={`${styles["contact__input"]} ${errors.subject ? styles['contact__input--error']: ""}`} placeholder="Escriba la materia que trata" id="subject__input" onChange={handleChange}/>
+                        <input type="text" name="subject" className={`${styles["contact__input"]} ${errors.subject ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Escriba la materia que trata" id="subject__input" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
                         <label className={styles.contact__label} htmlFor="message__input">Escriba su mensaje.</label>
-                        <textarea name="message" className={`${styles["contact__textarea"]} ${errors.message ? styles['contact__input--error']: ""}`} placeholder="¡Consultá lo que desees!" rows="10" cols="50" maxLength="2000" id="message__input" onChange={handleChange}></textarea>
+                        <textarea name="message" className={`${styles["contact__textarea"]} ${errors.message ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="¡Consultá lo que desees!" rows="10" cols="50" maxLength="2000" id="message__input" onChange={handleChange} disabled={submitStatus.status != 'idle'}></textarea>
                     </fieldset>
-                    <button type="submit" name="submit" className={styles['form__submit']} onClick={handleSubmit}>ENVIAR</button>
+                    <button type="submit" name="submit" className={`${submitStatus.status == 'idle' ? styles['form__submit']: ""} ${submitStatus.status != 'idle' ? styles['from__submit--submitted']: ""}`} onClick={handleSubmit} disabled={submitStatus.status != 'idle'}>{submitBtnText}</button>
                 </form>
             </section>
         )
