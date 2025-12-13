@@ -140,17 +140,23 @@
                         <legend className={styles['contact__legend']}>Infromacion Personal</legend>
                         <label className={styles.contact__label} htmlFor="name__input">Ingrese su nombre.</label>
                         <input type="text" name="name" className={`${styles["contact__input"]} ${errors.name ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Nombre" id="name__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
+                        <p className={`${styles.error__message} ${errors.name ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.name}</p>
                         <label className={styles.contact__label} htmlFor="lastname__input">Ingrese su apellido.</label>
                         <input type="text" name="lastname" className={`${styles["contact__input"]} ${errors.lastname ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Apellido" id="lastname__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
+                        <p className={`${styles.error__message} ${errors.lastname ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.lastname}</p>
                         <label className={styles.contact__label} htmlFor="email__input">Ingrese su Email.</label>
                         <input type="email" name="email" className={`${styles["contact__input"]} ${errors.email ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Email" id="email__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
+                        <p className={`${styles.error__message} ${errors.email ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.email}</p>
+
                     </fieldset>
                     <fieldset className={styles['contact__fieldset']}>
                         <legend className={styles['contact__legend']}>Consulta</legend>
                         <label className={styles.contact__label} htmlFor="subject__input">Asunto.</label>
                         <input type="text" name="subject" className={`${styles["contact__input"]} ${errors.subject ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Escriba la materia que trata" id="subject__input" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
+                        <p className={`${styles.error__message} ${errors.subject ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.subject}</p>
                         <label className={styles.contact__label} htmlFor="message__input">Escriba su mensaje.</label>
                         <textarea name="message" className={`${styles["contact__textarea"]} ${errors.message ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="¡Consultá lo que desees!" rows="10" cols="50" maxLength="2000" id="message__input" onChange={handleChange} disabled={submitStatus.status != 'idle'}></textarea>
+                        <p className={`${styles.error__message} ${errors.message ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.message}</p>
                     </fieldset>
                     <button type="submit" name="submit" className={`${submitStatus.status == 'idle' ? styles['form__submit']: ""} ${submitStatus.status != 'idle' ? styles['from__submit--submitted']: ""}`} onClick={handleSubmit} disabled={submitStatus.status != 'idle'}>{submitBtnText}</button>
                 </form>
