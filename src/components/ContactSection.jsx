@@ -147,7 +147,6 @@
                         <label className={styles.contact__label} htmlFor="email__input">Ingrese su Email.</label>
                         <input type="email" name="email" className={`${styles["contact__input"]} ${errors.email ? styles['contact__input--error']: ""} ${submitStatus.status != 'idle' ? styles['input__submitted']: ""}`} placeholder="Email" id="email__input" autoComplete="on" onChange={handleChange} disabled={submitStatus.status != 'idle'}/>
                         <p className={`${styles.error__message} ${errors.email ? styles['error__message--active'] : styles['error__message--disabled']}`}>{errors.email}</p>
-
                     </fieldset>
                     <fieldset className={styles['contact__fieldset']}>
                         <legend className={styles['contact__legend']}>Consulta</legend>

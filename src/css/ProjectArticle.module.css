@@ -88,25 +88,6 @@
     align-items: center;
     grid-area: 4 / 2 / 5 / 3;
 }
-.project__info-button--open{
-    text-align: center;
-    font-size: 1rem;
-    margin: 0 10px;
-    padding: 5px 10px;
-    width: 200px;
-    border-radius: 5px;
-    background-color: #e1c483;
-    transition: background-color 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
-}
-.project__info-button--open:hover{
-    background-color: #ffebc0;
-    transition: background-color 0.3s ease-in-out;
-}
-.project__info-button--open:enabled {
-    transform: scale(0.98);
-}
 /* Responsive */
 @media (max-width: 768px){
     .project{
@@ -140,6 +121,7 @@
         justify-content: center;
     }
     .project__buttons{
+        background-color: aquamarine;
         grid-area: 5 / 1 / 6 / 2;
     }
 }

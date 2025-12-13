@@ -39,7 +39,7 @@ function NavBar({headerRef, proyectsRef, studiesRef, contactRef}){
     return(
         <nav className={navBarClass}>
             <ul className={styles['nav-container']}>
-                <a href="https://maurolportfolio.netlify.app/" className={styles['nav__logo--link']} target="_blank"><img src={logo} alt="Logo del Portfolio" className={styles['nav__logo--img']} /></a>
+                <a href="https://maurolozano.netlify.app/" className={styles['nav__logo--link']} target="_blank"><img src={logo} alt="Logo del Portfolio" className={styles['nav__logo--img']} /></a>
                 <li className={styles['nav-bar__item']}><button type="button" onClick={()=>{handleScroll(headerRef)}}>Inicio</button></li>
                 <li className={styles['nav-bar__item']}><button type="button" onClick={()=>{handleScroll(proyectsRef)}}>Proyectos</button></li>
                 <li className={styles['nav-bar__item']}><button type="button" onClick={()=>{handleScroll(studiesRef)}}>Estudios</button></li>
