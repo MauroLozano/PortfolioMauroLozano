@@ -27,10 +27,10 @@ function App() {
         contactRef = {contactRef}
       />
       <main>
-        <AboutMeSection />
         <ProjectsSection ref={proyectsRef}/>
-        <ExperienceSection />
         <StudiesSection ref={studiesRef}/>
+        <ExperienceSection />
+        <AboutMeSection />
         <ContactSection ref={contactRef}/>
       </main>
       <Footer />

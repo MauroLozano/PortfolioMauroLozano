@@ -1,3 +1,25 @@
-.presentation{
-    text-align: center;
+.aboutme__content{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    width: 800px;
+}
+.aboutme__info--container{
+    display: flex;
+    flex-direction: column;
+}
+.aboutme__profile--container{
+    min-width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 15px 3px;
+}
+.aboutme__profile--img{
+    height: 100%;
 }

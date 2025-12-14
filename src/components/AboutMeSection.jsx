@@ -1,11 +1,21 @@
 import React from "react";
 import styles from '../css/AboutMeSection.module.css'
+import profile from '../assets/profile.webp'
 
 function AboutMeSection(){
     return (
-        <section className={styles.presentation}>
-            <h2 className={styles.section__title}>SOBRE MI</h2>
-            <p>Estudiante de Tecnicatura de Desarrollo de Software. Busco implementar y expandir mis habilidades y conocimientos de JS, Node, bases de datos y desarrollo web para llevar a cabo aplicaciones y proyectos de todo tipo.</p>
+        <section className={styles.aboutme__section}>
+            <h2 className={styles.section__title}>SOBRE MÍ</h2>
+            <div className={styles['aboutme__content']}>
+                <div className={styles['aboutme__info--container']}>
+                    <h3>Mauro Lozano</h3>
+                    <p>Soy un estudiante de Tecnicatura en Desarrollo de Software. Mi primer contacto con la programacion fue de pequeño. Pasaba horas enganchado frente a la pantalla intentando depurar mi codigo, pero curiosamente no estaba sufriendo, se sentía como un desafío</p>
+                    <p>A lo largo de mi formación académica, he desarrollado varios proyectos en equipo. Esta experiencia me ha brindado la habilidad de trabajar cómodamente en entornos colaborativos y transmitir mis ideas adecuadamente.</p>
+                </div>
+                <div className={styles['aboutme__profile--container']}>
+                    <img src={profile} alt="Foto de Perfil" className={styles['aboutme__profile--img']}/>
+                </div>
+            </div>
         </section>
     )
 }
