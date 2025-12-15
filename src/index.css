@@ -2,11 +2,15 @@
 * {
     box-sizing: border-box; 
 }
+html{
+    scrollbar-color: #e1c483 black;
+}
 body{
     background-color:#22333b;
     font-size: 1rem;
     background-image: url(./assets/gplay.png);
     font-family: "Space Grotesk", sans-serif;
+    
 }
 .no-scroll {
     overflow: hidden;

@@ -121,7 +121,6 @@
         justify-content: center;
     }
     .project__buttons{
-        background-color: aquamarine;
         grid-area: 5 / 1 / 6 / 2;
     }
 }

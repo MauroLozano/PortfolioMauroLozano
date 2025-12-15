@@ -46,6 +46,7 @@
     color: #CFBCA5;
 }
 .item__content{
+    max-height: 0;
     overflow: hidden;
     padding-left: 50px;
     width: 100%;
