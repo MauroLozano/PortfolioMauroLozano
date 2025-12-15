@@ -14,6 +14,7 @@
     border-radius: 5px;
     left: 50%;
     bottom: -35px;
+    pointer-events: none;
 }
 .tooltip::after{
     position: absolute;
@@ -29,11 +30,11 @@
 }
 .tooltip--visible{
     opacity: 1;
-    transform: translate(-50%, 0px);
+    transform: translate(-50%, 5px);
     transition: all 0.3s ease-in-out;
 }
 .tooltip--hidden{
     opacity: 0;
-    transform: translate(-50%, -5px);
+    transform: translate(-50%, -0px);
     transition: all 0.3s ease-in-out;
 }

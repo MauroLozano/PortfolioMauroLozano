@@ -7,7 +7,7 @@
 .project{
     height: 200px;
     width: 700px;
-    background-color: var(--color--brown--bg);
+    background-color: var(--color-brown--bg);
     overflow: hidden;
     border-radius: 10px;
     transition:all 0.1s ease-in-out;

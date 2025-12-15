@@ -6,8 +6,8 @@
     --color-white: #eae0d5;
     --color-brightyellow: #ffebc0;
     --color-yellow: #e1c483;
-    --color--dullyellow: #D0BC90;
-    --color--brown--bg: #5e503f;
+    --color-dullyellow: #D0BC90;
+    --color-brown--bg: #5e503f;
 }
 *{
     box-sizing: border-box;

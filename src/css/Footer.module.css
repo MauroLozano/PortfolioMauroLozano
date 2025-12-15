@@ -24,12 +24,11 @@
     align-items: center;
 }
 .footer__contact--img{
-    filter: drop-shadow(#6b5c3f -2px 2px 3px);
-    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(var(--color-yellow) 0 0 4px);
+    transition: transform 0.3s ease-in-out;
 }
 .footer__contact--img:hover{
     transform: scale(1.05);
-    filter: drop-shadow(#6b5c3f -2px 2px 5px);
 }
 /* Responsive */
 @media (max-width: 440px){

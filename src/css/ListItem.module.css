@@ -43,7 +43,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
-    color: var(--color--dullyellow);
+    color: var(--color-dullyellow);
 }
 .item__content{
     max-height: 0;

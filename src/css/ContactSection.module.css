@@ -8,7 +8,7 @@
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px 1px var(--color-black);
-    background-color: var(--color--brown--bg);  
+    background-color: var(--color-brown--bg);  
 }
 .contact__label{
     color: #fff2e5;
@@ -20,7 +20,6 @@
     flex-direction: column;
     width: 100%;
 }
-
 .contact__input{
     margin: 0.5rem 0;
     width: 100%;
@@ -91,12 +90,11 @@
 }
 .p__copy--mail{
     cursor: pointer;
-    color: #fff2e5;
+    color: var(--color-white);
     transition: all 0.3s ease-in-out;
-    margin: 0.5rem;
 }
 .p__copy--mail:hover{
-    color: var(--color-yellow);
+    color: var(--color-brightyellow);
     transition: all 0.3s ease-in-out;
 }
 .p__copy--mail:active{
