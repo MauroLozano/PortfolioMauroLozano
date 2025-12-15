@@ -1,14 +1,13 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, lazy, Suspense } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ProjectsSection from './components/ProjectsSection'
-import AboutMeSection from './components/AboutMeSection'
-import ExperienceSection from './components/ExperienceSection'
-import StudiesSection from './components/StudiesSection'
 import ContactSection from './components/ContactSection'
 import NavBar from './components/NavBar'
-
+const AboutMeSection = lazy(()=> import('./components/AboutMeSection'))
+const ExperienceSection = lazy(()=> import('./components/ExperienceSection'))
+const StudiesSection = lazy(()=> import('./components/StudiesSection'))
 
 function App() {
   const headerRef = useRef(null)

@@ -5,11 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio de Mauro Lozano, desarrollador web y de software. Proyectos, habilidades y experiencia en desarrollo frontend, backend y aplicaciones.">
     <title>Mauro Lozano | Desarrollo Web y Software</title>
-    <link rel="icon" type="image/ico" href=".//assets/icons/icon.ico" />
+    <link rel="icon" type="image/ico" href="./src/assets/icons/icon.ico" />
     <link rel="canonical" href="https://maurolozano.netlify.app/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v15/VGF-Gf-rHIUqJzKBU7svk3P-C3t_1y.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        :root{
+            /* Colors */
+            --color-black: #0a0908;
+            --color-darkblue-bg: #22333b;
+            --color-white: #eae0d5;
+            --color-brightyellow: #ffebc0;
+            --color-yellow: #e1c483;
+            --color-dullyellow: #D0BC90;
+            --color-brown--bg: #5e503f;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            scrollbar-color: #e1c483 black;
+        }
+        body{
+            background-color:var(--color-darkblue-bg);
+            font-size: 1rem;
+            background-image: url(./src/assets/gplay.png);
+            font-family: "Space Grotesk", sans-serif;
+        }
+        body, h1, h2, h3, p, ul, ol, input, textarea, button {
+            margin: 0;
+            padding: 0;
+        }
+        .no-scroll {
+            overflow: hidden;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .section__title{
+            margin: 1rem;
+        }
+        h1{
+            font-size: 3rem;
+        }
+        h2{
+            font-size: 2rem;
+            color: var(--color-yellow);
+            text-shadow:  0px 0px 15px var(--color-black);
+        }
+        h3{
+            font-size: 1.5rem;
+            color: var(--color-yellow);
+            text-shadow:  0px 0px 15px var(--color-black);
+        }
+        p{
+            font-weight: 400;
+            color: var(--color-white);
+            text-wrap: pretty;
+        }
+        input, textarea, button, ul, ol, body{
+            font-family: "Space Grotesk", sans-serif;
+            list-style: none;
+            border: none;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem auto;
+            max-width: 700px;
+        }
+    </style>
+    <link rel="preload" href="./src/assets/projects/alabarda(412x351).webp" as="image" type="image/webp" fetchPriority="high">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-31BL6NF3SS"></script>
     <script>
