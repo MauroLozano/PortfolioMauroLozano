@@ -16,7 +16,7 @@
 }
 .item__dot{
     border-radius: 100%;
-    background-color: #e1c483;
+    background-color: var(--color-yellow);
     position: relative;
     transition: all 0.2s ease-out;
 }
@@ -32,7 +32,7 @@
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background-color: #0a0908;
+    background-color: var(--color-black);
     position: relative;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
-    color: #CFBCA5;
+    color: var(--color--dullyellow);
 }
 .item__content{
     max-height: 0;

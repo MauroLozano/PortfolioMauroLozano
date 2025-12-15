@@ -6,7 +6,7 @@
 }
 .tooltip{
     position: absolute;
-    background-color: #e1c483;
+    background-color: var(--color-yellow);
     width: fit-content;
     height: fit-content;
     padding: 0.3rem 0.5rem;
@@ -24,7 +24,7 @@
     left: 50%;
     border: 7px solid transparent;
     transform: translateX(-50%);
-    border-bottom-color: #e1c483;
+    border-bottom-color: var(--color-yellow);
     transition: opacity 0.3s ease-in-out;
 }
 .tooltip--visible{

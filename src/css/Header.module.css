@@ -1,7 +1,7 @@
 .header{
-    background-color:#0a0908 ;
+    background-color:var(--color-black) ;
     border-radius: 0px 0px 20px 20px;
-    box-shadow: 0 0 10px 2px #000;
+    box-shadow: 0 0 10px 2px var(--color-black);
     height: 350px;
     width: 100%;
     overflow: hidden;
@@ -15,7 +15,7 @@
     height: 100%;
 }
 .header__title{
-    color: #e1c483;
+    color: var(--color-yellow);
     margin:5px;
     text-shadow: #6b5c3f -4px 3px 3px;
 }
@@ -23,7 +23,7 @@
     max-width: 300px;    
     max-height: 300px;
     transform: rotate(-10deg);
-    filter: drop-shadow(#0a0908 5px 5px 5px);
+    filter: drop-shadow(var(--color-black) 5px 5px 5px);
 }
 .logo__style{
     background-color: #22333b;
@@ -102,7 +102,7 @@
     position: absolute;
     width: 5px;
     height: 80%;
-    background-color: #ffebc0;
+    background-color: var(--color-brightyellow);
     top: 50%;
     transform: translateY(-50%);
     left: 11px;
@@ -136,7 +136,7 @@
     position: absolute;
     width: 5px;
     height: 50%;
-    background-color: #ffebc0;
+    background-color: var(--color-brightyellow);
     top: 50%;
     transform: translateY(-50%);
     left: 11px;
