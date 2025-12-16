@@ -4,11 +4,11 @@ import './index.css'
 import Header from './components/Header'
 import ProjectsSection from './components/ProjectsSection'
 import NavBar from './components/NavBar'
-const Footer = lazy(()=> import('./components/Footer')) 
+import StudiesSection from './components/StudiesSection'
+import AboutMeSection from './components/AboutMeSection'
+import ExperienceSection from './components/ExperienceSection'
+import Footer from './components/Footer'
 const ContactSection = lazy(()=> import('./components/ContactSection'))
-const AboutMeSection = lazy(()=> import('./components/AboutMeSection'))
-const ExperienceSection = lazy(()=> import('./components/ExperienceSection'))
-const StudiesSection = lazy(()=> import('./components/StudiesSection'))
 const LoadingFallback = () => <div style={{height: '50vh', textAlign: 'center'}}>Cargando...</div>;
 function App() {
   const headerRef = useRef(null)
@@ -28,10 +28,10 @@ function App() {
       />
       <main>
         <ProjectsSection ref={proyectsRef}/>
+        <StudiesSection ref={studiesRef}/>
+        <ExperienceSection />
+        <AboutMeSection />
         <Suspense fallback={<LoadingFallback />}>
-          <StudiesSection ref={studiesRef}/>
-          <ExperienceSection />
-          <AboutMeSection />
           <ContactSection ref={contactRef}/>
         </Suspense>
       </main>

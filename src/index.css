@@ -10,7 +10,7 @@
 }
 @font-face {
     font-family: 'Space Grotesk';
-    src: url('./assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    src: url('/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
     font-weight: 300 700;
     font-style: normal;
     font-display: swap;
