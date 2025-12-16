@@ -9,7 +9,7 @@
                     const linkNames = Object.keys(project.links)
                     return(
                         <article key={project.id} className={styles.project}>
-                            <a href={project.links[1]} target="_blank" rel="noopener noreferrer" className={styles['project__img-link']}><img src={project.projectImg} alt="Imagen del Proyecto" className={styles.project__img} fetchPriority='high' /></a>
+                            <a href={project.links['Demo']} target="_blank" rel="noopener noreferrer" className={styles['project__img-link']}><img src={project.projectImg} alt="Imagen del Proyecto" className={styles.project__img} fetchPriority='high' /></a>
                             <h3>{project.title}</h3>
                             <p className={styles['project__text']}>{project.description}</p>
                             <div className={styles['project__tech']}>

@@ -43,10 +43,10 @@ const Header = forwardRef((props, ref) => {
                 </div>
             </div>
             <div className={styles.header__content}>
-                <div className={styles.logo__style}><img src={logo} alt="Logo del Portfolio" className={styles.logo__img}></img></div>
+                <div className={styles.logo__style}><img src={logo} alt="Logo del Portfolio" className={styles.logo__img} fetchPriority="high"></img></div>
                 <div className={styles.header__data}>
                     <h1 className={styles.header__title}>MAURO LOZANO</h1>
-                    <h3 className={styles.header__subtitle}>Desarrollador de Software</h3>
+                    <h2 className={styles.header__subtitle}>Desarrollador de Software</h2>
                     <div className={styles.header__social}>
                         <Tooltip text='GitHub'>
                             <a href="https://github.com/MauroLozano" className={styles['header__social--link']} target="_blank" rel="noopener noreferrer"><img src={gitHubIcon} alt="GitHub" className={styles['header__social--img']} /></a>

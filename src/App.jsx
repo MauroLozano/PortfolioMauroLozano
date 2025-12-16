@@ -1,14 +1,15 @@
 import { useState, useRef, lazy, Suspense } from 'react'
 import './App.css'
+import './index.css'
 import Header from './components/Header'
-import Footer from './components/Footer'
 import ProjectsSection from './components/ProjectsSection'
-import ContactSection from './components/ContactSection'
 import NavBar from './components/NavBar'
+const Footer = lazy(()=> import('./components/Footer')) 
+const ContactSection = lazy(()=> import('./components/ContactSection'))
 const AboutMeSection = lazy(()=> import('./components/AboutMeSection'))
 const ExperienceSection = lazy(()=> import('./components/ExperienceSection'))
 const StudiesSection = lazy(()=> import('./components/StudiesSection'))
-
+const LoadingFallback = () => <div style={{height: '50vh', textAlign: 'center'}}>Cargando...</div>;
 function App() {
   const headerRef = useRef(null)
   const proyectsRef = useRef(null)
@@ -27,10 +28,12 @@ function App() {
       />
       <main>
         <ProjectsSection ref={proyectsRef}/>
-        <StudiesSection ref={studiesRef}/>
-        <ExperienceSection />
-        <AboutMeSection />
-        <ContactSection ref={contactRef}/>
+        <Suspense fallback={<LoadingFallback />}>
+          <StudiesSection ref={studiesRef}/>
+          <ExperienceSection />
+          <AboutMeSection />
+          <ContactSection ref={contactRef}/>
+        </Suspense>
       </main>
       <Footer />
     </div>
