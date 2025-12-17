@@ -20,9 +20,13 @@
         }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31BL6NF3SS"></script>
+    <!-- Creates the tag dynamically and with a timer so we can connect to Analytics after the page has rendered -->
     <script>
         window.addEventListener('load', ()=>{
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-31BL6NF3SS";
+            document.head.appendChild(script);
             setTimeout(()=>{
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
