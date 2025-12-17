@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import styles from '../css/Header.module.css'
-import gitHubIcon from '../assets/social/github-img(40x40).webp'
-import linkedinIcon from '../assets/social/ln-img(40x40).webp'
+import gitHubIcon from '../assets/social/github-img60x60.webp'
+import linkedinIcon from '../assets/social/ln-img60x60.webp'
 import Tooltip from './Tooltips'
 import logo from '../assets/icons/logo.webp'
 
@@ -49,10 +49,10 @@ const Header = forwardRef((props, ref) => {
                     <h2 className={styles.header__subtitle}>Desarrollador de Software</h2>
                     <div className={styles.header__social}>
                         <Tooltip text='GitHub'>
-                            <a href="https://github.com/MauroLozano" className={styles['header__social--link']} target="_blank" rel="noopener noreferrer"><img src={gitHubIcon} alt="GitHub" className={styles['header__social--img']} /></a>
+                            <a href="https://github.com/MauroLozano" className={styles['header__social--link']} target="_blank" rel="noopener noreferrer"><img src={gitHubIcon} alt="GitHub" className={styles['header__social--img']} width={'60'} height={'60'}/></a>
                         </Tooltip>
                         <Tooltip text='LinkedIn'>
-                            <a href="https://www.linkedin.com/in/mauro-lozano-meana-621347355/?trk=opento_sprofile_topcard" className={styles['header__social--link']} target="_blank"><img src={linkedinIcon} alt="LinkedIn" className={styles['header__social--img']} /></a>
+                            <a href="https://www.linkedin.com/in/mauro-lozano-meana-621347355/?trk=opento_sprofile_topcard" className={styles['header__social--link']} target="_blank"><img src={linkedinIcon} alt="LinkedIn" className={styles['header__social--img']} width={'60'} height={'60'}/></a>
                         </Tooltip>
                     </div>
                 </div>

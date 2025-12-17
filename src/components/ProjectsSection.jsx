@@ -15,7 +15,7 @@
                             <div className={styles['project__tech']}>
                                 {project.techIcons.map((icon)=>{
                                     return(
-                                        <img key={icon} src={icon} alt="Imagen de Tecnología usada" className={styles['project__tech-img']} loading="lazy" decoding="async" width={'40'} height={'40'}/>
+                                        <img key={icon} src={icon} alt="Imagen de Tecnología usada" className={styles['project__tech-img']} loading="lazy" decoding="async" width={'60'} height={'60'}/>
                                     )
                                 })}
                             </div>

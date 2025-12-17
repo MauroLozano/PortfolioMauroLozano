@@ -1,7 +1,7 @@
 import React, { useState , useRef , useEffect} from "react";
 import styles from '../css/NavBar.module.css'
-import gitHubIcon from '../assets/social/github-img(40x40).webp'
-import linkedinIcon from '../assets/social/ln-img(40x40).webp'
+import gitHubIcon from '../assets/social/github-img60x60.webp'
+import linkedinIcon from '../assets/social/ln-img60x60.webp'
 import logo from "../assets/icons/logo.webp";
 import Tooltip from './Tooltips'
 function NavBar({headerRef, proyectsRef, studiesRef, contactRef}){
@@ -48,10 +48,10 @@ function NavBar({headerRef, proyectsRef, studiesRef, contactRef}){
                 To avoid this, the prop onClick needs a function to call later, the anonymous function*/}
                 <li className={`${styles['nav-bar__item']} ${styles['nav-bar__item--social']}`}>
                     <Tooltip text='GitHub'>
-                        <a href="https://github.com/MauroLozano" className={styles['nav-bar__item--social__link']} target="_blank" rel="noopener noreferrer"><img src={gitHubIcon} alt="GitHub" className={styles['nav__logo--img']} /></a>
+                        <a href="https://github.com/MauroLozano" className={styles['nav-bar__item--social__link']} target="_blank" rel="noopener noreferrer"><img src={gitHubIcon} alt="GitHub" className={styles['nav__logo--img']} width={'60'} height={'60'}/></a>
                     </Tooltip>
                     <Tooltip text='LinkedIn'>
-                        <a href="https://www.linkedin.com/in/mauro-lozano-meana-621347355/?trk=opento_sprofile_topcard" className={styles['nav-bar__item--social__link']} target="_blank"><img src={linkedinIcon} alt="LinkedIn" className={styles['nav__logo--img']} /></a>
+                        <a href="https://www.linkedin.com/in/mauro-lozano-meana-621347355/?trk=opento_sprofile_topcard" className={styles['nav-bar__item--social__link']} target="_blank"><img src={linkedinIcon} alt="LinkedIn" className={styles['nav__logo--img']} width={'60'} height={'60'}/></a>
                     </Tooltip>
                 </li>
             </ul>

@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
-    background-image: url('../assets/diagmonds.png');
+    background-image: url('../assets/backgrounds/diagmonds.png');
 }
 .footer__p{
     margin: 1rem;

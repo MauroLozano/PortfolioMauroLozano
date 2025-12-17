@@ -1,6 +1,6 @@
-import cssIcon50x50 from '../assets/techIcons/cssIcon50x50.webp'
-import html5Icon50x50 from '../assets/techIcons/html5Icon50x50.webp'
-import jsIcon50x50 from '../assets/techIcons/jsIcon50x50.webp'
+import cssIcon60x60 from '../assets/techIcons/cssIcon60x60.webp'
+import html5Icon60x60 from '../assets/techIcons/html5Icon60x60.webp'
+import jsIcon60x60 from '../assets/techIcons/jsIcon60x60.webp'
 import alabarda from '../assets/projects/alabarda(412x351).webp'
 
 export const projectData = [
@@ -13,6 +13,6 @@ export const projectData = [
             Demo: 'https://alabarda.netlify.app/'
         },
         projectImg: alabarda,
-        techIcons: [jsIcon50x50, html5Icon50x50, cssIcon50x50]
+        techIcons: [jsIcon60x60, html5Icon60x60, cssIcon60x60]
     },
 ]
