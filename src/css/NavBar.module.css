@@ -13,6 +13,7 @@
     top: 0;
     transform: translateY(-100%);
     transition: all 0.2s ease-in-out;
+    z-index: 100;
 }
 .nav-bar--disabled:after{
     opacity: 0;
