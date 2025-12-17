@@ -66,6 +66,7 @@
     filter: drop-shadow(var(--color-black) 5px 5px 5px);
 }
 .logo__style{
+    position: relative;
     background-color: var(--color-darkblue-bg);
     margin: 2em;
     display: flex;
@@ -73,9 +74,12 @@
     align-items: center;
     border-radius: 50px 0px;
     transform: rotate(10deg);
-    overflow: hidden;
     height: 250px;
+    width: 250px;
     aspect-ratio: 1 / 1;
+    z-index: 1;
+    transform-style: preserve-3d; 
+    perspective: 1000px;
 }
 /* Animations */
 
@@ -195,19 +199,26 @@
     left: 1px;
     border-radius: 100px 0 0 100px;
 }
-.logo__style{
-    box-shadow: #c3aa72 0 0 35px 0.2px;
-    animation: profile_anim 3s ease-in-out  infinite reverse both;
+.logo__style::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-radius: 50px 0px;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-1px) scale(0.9);
+    box-shadow: #c3aa72 0 0 30px 5px;
+    animation: profile_anim 3s ease-in-out infinite reverse both;
 }
 @keyframes profile_anim{
     0%{
-        box-shadow: #c3aa72 0 0 15px 0.009px;
+        transform: translateZ(-1px) scale(0.95);
     }
     50%{
-        box-shadow: #c3aa72 0 0 35px 0.2px;
+        transform: translateZ(-1px) scale(1);
     }
     100%{
-        box-shadow: #c3aa72 0 0 15px 0.009px;
+        transform: translateZ(-1px) scale(0.95);
     }
 }
 /* Responsive */
@@ -260,7 +271,7 @@
     }
     .logo__style{
         width: 150px;
-        height: auto;
+        height: 150px;
         margin: 1rem;
     }
     .logo__img{
