@@ -1,5 +1,4 @@
 import { useState, useRef, lazy, Suspense } from 'react'
-import './App.css'
 import './index.css'
 import Header from './components/Header'
 import ProjectsSection from './components/ProjectsSection'
