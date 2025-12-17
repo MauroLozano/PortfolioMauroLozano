@@ -6,7 +6,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-image: url('../assets/diagmonds.png');
+    background-image: url('../assets/backgrounds/diagmonds.png');
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +49,9 @@
     height: 100%;
 }
 .header__social--img{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
     filter: drop-shadow(var(--color-yellow) 0 0 4px);
     transition: transform 0.3s ease-in-out;
 }
@@ -212,7 +215,8 @@
         font-size: 2.5rem;
     }
     .header__subtitle{
-        text-align: center; 
+        text-align: center;
+        font-size: 1.5rem;
     }
     .header-animation__left,.header-animation__right{
         width: auto;
@@ -269,10 +273,12 @@
     }
     .header__subtitle{
         text-align: center;
-        font-size: 1rem;
     }
 }
 @media (max-width: 440px){
+    .header__subtitle{
+        font-size: 1rem;
+    }
     /* Animations */
     .header-animation__left,.header-animation__right{
         margin:20px;

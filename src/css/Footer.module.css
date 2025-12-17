@@ -24,6 +24,9 @@
     align-items: center;
 }
 .footer__contact--img{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
     filter: drop-shadow(var(--color-yellow) 0 0 4px);
     transition: transform 0.3s ease-in-out;
 }

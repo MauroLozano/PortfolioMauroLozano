@@ -41,6 +41,9 @@
 .project__tech-img{
     height: inherit;
     margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
     filter: drop-shadow(black 2px 2px 5px) ;
 }
 .project__img{
