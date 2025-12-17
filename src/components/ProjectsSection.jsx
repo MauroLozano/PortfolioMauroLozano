@@ -9,13 +9,13 @@
                     const linkNames = Object.keys(project.links)
                     return(
                         <article key={project.id} className={styles.project}>
-                            <a href={project.links['Demo']} target="_blank" rel="noopener noreferrer" className={styles['project__img-link']}><img src={project.projectImg} alt="Imagen del Proyecto" className={styles.project__img} fetchPriority='high' /></a>
+                            <a href={project.links['Demo']} target="_blank" rel="noopener noreferrer" className={styles['project__img-link']}><img src={project.projectImg} alt="Imagen del Proyecto" className={styles.project__img} fetchPriority={project.id == 1? 'high' : 'auto'} width={'210'} height={'200'}/></a>
                             <h3>{project.title}</h3>
                             <p className={styles['project__text']}>{project.description}</p>
                             <div className={styles['project__tech']}>
                                 {project.techIcons.map((icon)=>{
                                     return(
-                                        <img key={icon} src={icon} alt="Imagen de Tecnología usada" className={styles['project__tech-img']} loading="lazy" decoding="async"/>
+                                        <img key={icon} src={icon} alt="Imagen de Tecnología usada" className={styles['project__tech-img']} loading="lazy" decoding="async" width={'40'} height={'40'}/>
                                     )
                                 })}
                             </div>

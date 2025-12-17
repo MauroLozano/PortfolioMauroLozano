@@ -14,11 +14,13 @@ function AboutMeSection(){
                 </div>
                 <div className={styles['aboutme__profile--container']}>
                     <picture>
-                        <source media="(max-width: 700px)" srcSet={profile_small}/>
+                        <source media="(max-width: 700px)" srcSet={profile_small} width={'250'} height={'150'}/>
                         <img 
                             src={profile_default}
                             alt="Foto de Perfil"
                             className={styles['aboutme__profile--img']}
+                            width={'375'}
+                            height={'250'}
                         />
                     </picture>
                 </div>
