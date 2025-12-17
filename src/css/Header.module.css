@@ -59,7 +59,8 @@
     transform: scale(1.05);
 }
 .logo__img{
-    width: 300px;  
+    width: 300px;
+    height: 300px;
     aspect-ratio: 1 / 1;
     transform: rotate(-10deg);
     filter: drop-shadow(var(--color-black) 5px 5px 5px);
